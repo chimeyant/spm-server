@@ -32,7 +32,7 @@ export default class DomainsController {
       const {filename, sumber, category_uuid} = request.all()
 
         await request.validate(DomainValidator)
-        const filexls = Application.publicPath("../storage/documents/"+ filename);
+        const filexls = Application.publicPath("../../storage/documents/"+ filename);
         const datas:{}[]=[]
         await Excel(filexls).then((rows)=>{
           let i =0
