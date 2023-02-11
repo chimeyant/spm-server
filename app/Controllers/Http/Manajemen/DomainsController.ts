@@ -104,7 +104,7 @@ export default class DomainsController {
     try {
       categories.forEach(async element => {
         let katagoriname = element.name
-        const stream = fs.createWriteStream(Application.publicPath('../storage/' + katagoriname.replace(/\s/g, '').toLowerCase()+ '.txt'));
+        const stream = fs.createWriteStream(Application.publicPath('../../storage/' + katagoriname.replace(/\s/g, '').toLowerCase()+ '.txt'));
         const domains = await Domain.query().where('category_uuid', element.uuid)
         domains.forEach(item => {
           stream.write("*." + item.name + "\r\n");
