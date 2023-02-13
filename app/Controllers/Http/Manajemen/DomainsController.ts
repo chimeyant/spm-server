@@ -137,6 +137,9 @@ export default class DomainsController {
   public async showDomain({params, response}){
     const {filename}= params
 
+    return filename
+
+
     const pathfile = Application.publicPath('../../storage/'+ filename)
 
     const filetxt = fs.createReadStream(pathfile)
