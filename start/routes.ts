@@ -26,6 +26,7 @@ Route.get('/', async () => {
 
 
 Route.get("sliders", "HalamanDepan/SlidersController.publish")
+Route.get("showdomain/:filename","Manajemen/DomainsController.showDomain")
 
 Route.group(()=>{
   Route.group(()=>{
