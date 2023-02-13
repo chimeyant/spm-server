@@ -139,7 +139,7 @@ export default class DomainsController {
 
     const pathfile = Application.publicPath('../../storage/'+ filename)
 
-    return pathfile
+    return response.download(pathfile)
   }
 
 
