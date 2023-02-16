@@ -107,7 +107,9 @@ export default class DomainsController {
         const stream = fs.createWriteStream(Application.publicPath('../../storage/' + katagoriname.replace(/\s/g, '').toLowerCase()+ '.txt'));
         const domains = await Domain.query().where('category_uuid', element.uuid)
         domains.forEach(item => {
-          stream.write("*." + item.name + "\r\n");
+          const temdomain = item.name
+          const finaldomain = temdomain.replace("*","")
+          stream.write("*." + finaldomain + "\r\n");
         });
 
       });
